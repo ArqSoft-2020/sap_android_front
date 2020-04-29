@@ -1,0 +1,6 @@
+query userInfo($id: String!) {
+  UserInfo(id: $id) {
+    user{ userName, name, lastName, email, country, picture, imageBytes, totalGames, wonGames, lostGames}
+  }
+}
+
