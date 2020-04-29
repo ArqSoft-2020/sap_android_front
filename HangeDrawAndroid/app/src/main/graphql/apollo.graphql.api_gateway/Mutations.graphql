@@ -1,0 +1,35 @@
+mutation Register($model:ViewModelUserInput!){
+    Register(model: $model){
+         error, response
+    }
+}
+
+mutation Verify($id: String!){
+    Verify(id:$id){
+        error, response
+    }
+}
+
+mutation DeleteUser($id: String!){
+    DeleteUser(id:$id){
+        error, response
+    }
+}
+
+mutation EditUser($model: ViewModelUserInput!, $id: String!){
+    EditUser(model: $model, id:$id){
+        error, response
+    }
+}
+
+mutation ChangePasswordUser($model: ViewModelPassword!, $id: String!){
+    ChangePasswordUser(model: $model, id:$id){
+        error, response
+    }
+}
+
+mutation ChangePassword($model: ViewModelPassword!, $id: String!, $token: String!){
+    ChangePassword(model: $model, id:$id, token: $token){
+        error, response
+    }
+}

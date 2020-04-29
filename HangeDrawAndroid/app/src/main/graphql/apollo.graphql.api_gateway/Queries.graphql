@@ -1,0 +1,26 @@
+query userInfo($id: String!) {
+  UserInfo(id: $id) {
+    user{ userName, name, lastName, email, country, picture, imageBytes, totalGames, wonGames, lostGames}
+  }
+}
+query uploadFile($model: ViewModelUploadFile!) {
+  UploadFile(model: $model) {
+    error, response, uri
+  }
+}
+query login($model: ViewModelLogin!) {
+  Login(model: $model) {
+    error, response, token, user{ userName, name, lastName, email, country, picture, imageBytes, totalGames, wonGames, lostGames }
+  }
+}
+query validateToken($token: String!) {
+  ValidateToken(token: $token) {
+    error, response
+  }
+}
+query requestPasswordChange($email: String!) {
+  RequestPasswordChange(email: $email) {
+    error, response
+  }
+}
+
