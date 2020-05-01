@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ProfileActivity">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_launcher_background"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:layout_below="@id/avatar"
+        android:layout_margin="10dp"
+        android:textColor="@color/cardview_light_background"/>
+
+    <TextView
+        android:id="@+id/lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:layout_below="@id/name"
+        android:textColor="@color/cardview_light_background"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:layout_below="@id/lastname"
+        android:textColor="@color/cardview_light_background"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="448dp"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:layout_below="@id/email"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Cerrar Sesión"
+        android:background="@color/blueColor"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@android:mipmap/sym_def_app_icon"
+ />
+
+    <EditText
+        android:id="@+id/name"
+        android:textColor="@color/cardview_dark_background"
+        android:background="@color/cardview_light_background"
+        android:layout_below="@id/press"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:hint="Nombre"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/lastname"
+        android:textColor="@color/cardview_dark_background"
+        android:background="@color/cardview_light_background"
+        android:imeOptions="actionNext"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:layout_below="@id/name"
+        android:inputType="textPersonName"
+        android:hint="Apellido"
+        android:singleLine="true"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/country"
+        android:textColor="@color/cardview_dark_background"
+        android:background="@color/cardview_light_background"
+        android:imeOptions="actionNext"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="País"
+        android:layout_below="@id/lastname"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:layout_centerHorizontal="true"  />
+
+    <EditText
+        android:id="@+id/username"
+        android:textColor="@color/cardview_dark_background"
+        android:background="@color/cardview_light_background"
+        android:imeOptions="actionNext"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombre de usuario"
+        android:layout_below="@id/country"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:textColor="@color/cardview_dark_background"
+        android:background="@color/cardview_light_background"
+        android:imeOptions="actionNext"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:hint="Correo electronico"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/username"
+        android:singleLine="true"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/password"
+        android:textColor="@color/cardview_dark_background"
+        android:background="@color/cardview_light_background"
+        android:imeOptions="actionNext"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Contraseña"
+        android:singleLine="true"
+        android:layout_below="@id/email"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"  />
+
+    <EditText
+        android:id="@+id/confirmedPassword"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/cardview_dark_background"
+        android:background="@color/cardview_light_background"
+        android:imeOptions="actionDone"
+        android:ems="10"
+        android:singleLine="true"
+        android:hint="Confirme su contraseña"
+        android:inputType="textPassword"
+        android:layout_below="@id/password"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Registrarme"
+        android:layout_below="@id/confirmedPassword"
+        android:layout_margin="10dp"
+        android:background="@color/blueColor"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/press"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/avatar"
+        android:lines="2"
+        android:textColor="@color/cardview_light_background"
+        android:layout_margin="5dp"
+        android:text="Presiona el icono para seleccionar una foto(Máximo tamaño permitido: 1mb" />
+
+</RelativeLayout>

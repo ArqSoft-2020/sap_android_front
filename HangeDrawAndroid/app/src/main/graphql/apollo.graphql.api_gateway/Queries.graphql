@@ -10,7 +10,7 @@ query uploadFile($model: ViewModelUploadFile!) {
 }
 query login($model: ViewModelLogin!) {
   Login(model: $model) {
-    error, response, token, user{ userName, name, lastName, email, country, picture, imageBytes, totalGames, wonGames, lostGames }
+    error, response, token, user{ id, userName, name, lastName, email, country, picture, imageBytes, totalGames, wonGames, lostGames }
   }
 }
 query validateToken($token: String!) {
