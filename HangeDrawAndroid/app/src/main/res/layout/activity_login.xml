@@ -15,7 +15,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="80dp"
         android:layout_centerHorizontal="true"
-        android:src="@mipmap/logo_hd" />
+        android:src="@mipmap/logo" />
 
     <EditText
         android:id="@+id/username"

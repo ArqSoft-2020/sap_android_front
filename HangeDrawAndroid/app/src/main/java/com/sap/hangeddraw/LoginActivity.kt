@@ -78,6 +78,23 @@ class LoginActivity :  AppCompatActivity() {
             ).enqueue(object : ApolloCall.Callback<LoginQuery.Data>(){
                 override fun onFailure(e: ApolloException) {
                     exception = e
+                    pd.dismiss()
+
+                    SplashScreen.getActivity().runOnUiThread {
+
+                        val builder = AlertDialog.Builder(SplashScreen.getActivity())
+                        builder.setTitle("Error")
+                        var errorStr = "Ocurrió un error"
+
+                        builder.setMessage( errorStr )
+                        //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+
+                        builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+                            dialog.dismiss()
+                        }
+
+                        builder.show()
+                    }
                 }
                 override fun onResponse(response: Response<LoginQuery.Data>) {
                     data = response.data?.login!!

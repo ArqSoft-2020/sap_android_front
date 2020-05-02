@@ -15,7 +15,7 @@
         android:layout_height="250dp"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="150dp"
-        app:srcCompat="@mipmap/logo_hd" />
+        app:srcCompat="@mipmap/logo" />
 
     <Button
         android:id="@+id/button2"
