@@ -17,12 +17,13 @@ class ProfileActivity : AppCompatActivity() {
         supportActionBar?.setTitle("Mi perfil")
 
         var user : ViewModelUser = SplashScreen.getUser()!!
-        name.text = user.name
-        lastname.text = user.lastName
+        name.text = user.name + " " + user.lastName
+        lastname.text = user.country
         email.text = user.email
         username.text = user.username
 
-        Picasso.get().load(user.picture).into(avatar)
+        if(user.picture.length > 0 )
+            Picasso.get().load(user.picture).into(avatar)
 
         logout.setOnClickListener({
             Click()
