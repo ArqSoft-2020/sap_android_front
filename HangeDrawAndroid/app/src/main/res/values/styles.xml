@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/blueColor</item>
         <item name="colorPrimaryDark">@color/blueColor</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/blueColor</item>
         <item name="statusBarBackground">@color/cardview_dark_background</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:actionBarItemBackground">@color/blueColor</item>

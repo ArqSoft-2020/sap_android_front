@@ -40,9 +40,9 @@ import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
 
-    private val BASE_URL = "http://ec2-3-210-210-169.compute-1.amazonaws.com:5000/graphql"
+    private val BASE_URL = "http://ec2-3-218-84-176.compute-1.amazonaws.com:5000/graphql"
     private lateinit var client: ApolloClient
-    private lateinit var data : RegisterMutation.Register
+    private var data : RegisterMutation.Register? = null
     private var UriFile : String = ""
 
     companion object {
@@ -107,6 +107,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        SplashScreen.setContext(this)
+
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
             avatar.setImageURI(data?.data)
 
@@ -120,7 +122,7 @@ class RegisterActivity : AppCompatActivity() {
             val pd = setProgressDialog(this, "Subiendo foto")
             pd.show()
 
-            var dataUploadFile : UploadFileQuery.UploadFile
+            var dataUploadFile : UploadFileQuery.UploadFile?
 
             var exceptionUploadFile : ApolloException
             client.newBuilder().build().query(
@@ -147,7 +149,8 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
                 override fun onResponse(response: Response<UploadFileQuery.Data>) {
-                    dataUploadFile = response.data?.uploadFile!!
+
+                    dataUploadFile = response.data?.uploadFile
 
                     if(dataUploadFile != null && dataUploadFile?.error != null && dataUploadFile?.error == false)
                     {
@@ -164,7 +167,7 @@ class RegisterActivity : AppCompatActivity() {
 
                             val builder = AlertDialog.Builder(SplashScreen.getActivity())
                             builder.setTitle("Error")
-                            var errorStr = dataUploadFile.response
+                            var errorStr = dataUploadFile?.response
 
                             builder.setMessage( errorStr )
 
@@ -187,6 +190,9 @@ class RegisterActivity : AppCompatActivity() {
 
 
     private fun ClickButton(){
+        SplashScreen.setContext(this)
+
+
         var name = name.text.toString()
         var lastname = username.text.toString()
         var country = country.text.toString()
@@ -252,7 +258,7 @@ class RegisterActivity : AppCompatActivity() {
                 override fun onResponse(response: Response<RegisterMutation.Data>) {
                     data = response.data?.register!!
 
-                    if(data != null && data.error != null && data.error == false)
+                    if(data != null && data?.error != null && data?.error == false)
                     {
                         pd.dismiss()
 
@@ -260,7 +266,7 @@ class RegisterActivity : AppCompatActivity() {
 
                             val builder = AlertDialog.Builder(SplashScreen.getActivity())
                             builder.setTitle("Registro exitoso")
-                            var errorStr = data.response
+                            var errorStr = data?.response
                             errorStr += "Verifica tu correo electrónico. Si no encuentras en la bandeja de entrada, revisa SPAM."
                             builder.setMessage( errorStr )
                             //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
@@ -281,7 +287,7 @@ class RegisterActivity : AppCompatActivity() {
 
                             val builder = AlertDialog.Builder(SplashScreen.getActivity())
                             builder.setTitle("Error")
-                            var errorStr = data.response
+                            var errorStr = data?.response
 
                             builder.setMessage( errorStr )
                             //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))

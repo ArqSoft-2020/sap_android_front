@@ -27,9 +27,9 @@ import okhttp3.OkHttpClient
 
 
 class LoginActivity :  AppCompatActivity() {
-    private val BASE_URL = "http://ec2-3-210-210-169.compute-1.amazonaws.com:5000/graphql"
+    private val BASE_URL = "http://ec2-3-218-84-176.compute-1.amazonaws.com:5000/graphql"
     private lateinit var client: ApolloClient
-    private lateinit var data : LoginQuery.Login
+    private var data : LoginQuery.Login? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,11 +51,12 @@ class LoginActivity :  AppCompatActivity() {
         var pass = password.text.toString()
         var usr = username.text.toString()
 
+        SplashScreen.setContext(this)
+
         if(pass.length < 1 || usr.length < 1){
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Error")
             builder.setMessage("Ingresa tu nombre de usuario y contraseña")
-            //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
 
             builder.setPositiveButton(android.R.string.yes) { dialog, which ->
                 dialog.dismiss()
@@ -97,9 +98,9 @@ class LoginActivity :  AppCompatActivity() {
                     }
                 }
                 override fun onResponse(response: Response<LoginQuery.Data>) {
-                    data = response.data?.login!!
+                    data = response.data?.login
 
-                    if(data != null && data.error != null && data.error == false)
+                    if(data != null && data?.error != null && data?.error == false)
                     {
                         pd.dismiss()
 
@@ -139,7 +140,7 @@ class LoginActivity :  AppCompatActivity() {
 
                             val builder = AlertDialog.Builder(SplashScreen.getActivity())
                             builder.setTitle("Error")
-                            var errorStr = data.response
+                            var errorStr = data?.response
 
                             builder.setMessage( errorStr )
                             //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
