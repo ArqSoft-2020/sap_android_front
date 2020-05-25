@@ -27,7 +27,7 @@ import okhttp3.OkHttpClient
 
 
 class LoginActivity :  AppCompatActivity() {
-    private val BASE_URL = "http://ec2-3-218-84-176.compute-1.amazonaws.com:5000/graphql"
+    private val BASE_URL = "http://ec2-3-227-32-190.compute-1.amazonaws.com/graphql"
     private lateinit var client: ApolloClient
     private var data : LoginQuery.Login? = null
 
