@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "914178032199",
+    "firebase_url": "https://hangeddraw.firebaseio.com",
+    "project_id": "hangeddraw",
+    "storage_bucket": "hangeddraw.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914178032199:android:01420b6f5dc2d523d32762",
+        "android_client_info": {
+          "package_name": "com.sap.hangeddraw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914178032199-on7fdhcj69vpfdn2g0crf0k8m37ht1b3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sap.hangeddraw",
+            "certificate_hash": "ac35a854cba2718804c7a43c40763a2478a5ad28"
+          }
+        },
+        {
+          "client_id": "914178032199-e5gid2bjvtobrgmmhm60gdof3vpnsqql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCckAKb0gjeQ63XhU-DNiNJWEw199JAhsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914178032199-e5gid2bjvtobrgmmhm60gdof3vpnsqql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
