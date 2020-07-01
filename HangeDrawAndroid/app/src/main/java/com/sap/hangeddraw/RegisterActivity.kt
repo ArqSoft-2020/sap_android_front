@@ -40,7 +40,7 @@ import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
 
-    private val BASE_URL = "http://ec2-3-227-32-190.compute-1.amazonaws.com/graphql"
+    private val BASE_URL = "http://ec2-54-147-224-240.compute-1.amazonaws.com:7000/graphql"
     private lateinit var client: ApolloClient
     private var data : RegisterMutation.Register? = null
     private var UriFile : String = ""
